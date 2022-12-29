@@ -12,7 +12,7 @@ public class TicketAppTest {
 
         Bag bag = new Bag(1000L);
         Audience audience = new Audience(bag);
-        Theather theather = new Theather(ticketSeller);
-        theather.enter(audience);
+        Theater theater = new Theater(ticketSeller);
+        theater.enter(audience);
     }
 }

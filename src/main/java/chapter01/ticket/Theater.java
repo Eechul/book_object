@@ -1,10 +1,10 @@
 package chapter01.ticket;
 
 // 소극장
-public class Theather {
+public class Theater {
     private TicketSeller ticketSeller;
 
-    public Theather(TicketSeller ticketSeller) {
+    public Theater(TicketSeller ticketSeller) {
         this.ticketSeller = ticketSeller;
     }
 
