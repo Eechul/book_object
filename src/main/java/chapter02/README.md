@@ -50,3 +50,9 @@
      * 객체간의 상호작용은 **메세지를 전송(send a message)** 하는것 뿐이다. 그 요청을 받는 객체는 메세지를 **수신(receive a message)** 했다고 한다.
      * 메세지를 수신한 객체는 자율적으로 메세지를 처리할 방법을 결정한다. 이 수단을 메서드(method) 라고 부른다.
      * 메시지와 메서드는 다르다. 코드에선 상영은 영화의 calculateMoiveFee 메서드를 호출하지만, 사실 '영화에게 calculateMoiveFee 메세지를 전송한다' 라고 말하는것이 적절. 상영은 영화에 calculateMoiveFee 메서드가 있는지도 모른다고 이해하는게 맞다.
+   * 할인 요금 계산을 위한 협력 시작하기
+     * 영화 클래스의 `calculateMovieFree` 메서드는 할인 정책(DiscountPolicy)에 따라 영화요금을 계산하여 반환한다.
+     * 그런데 이 메서드로만 봐선 할인 정책을 쓴다는 메세지만 전송한 것일 뿐 어떤 할인 정책을 썼는지 알 수 없다.
+   * 할인 정책과 할인 조건
+     * 할인 정책은 금액 할인 정책(AccountDiscountPolicy) 또는 비율 할인 정책(PercentDiscountPolicy)으로 구현될 것이고, 중복 코드로 묶어 추상화 했다는걸 알 수 있다.(추상클래스 사용)
+     * 할인 정책에는 여러개의 할인 조건(DiscountCondition)이 존재한다. 할인 조건은 인터페이스로 선언되고, 순번 조건(SequenceDiscountCondition)과 시간 조건(PeriodDiscountCondition)으로 구현될 것이다.
